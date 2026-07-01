@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Phone, MessageCircle, ShieldCheck, Clock3, MapPin } from "lucide-react";
 import { siteInfo } from "../data/site";
 
@@ -8,7 +11,7 @@ export default function Hero() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at 80% 20%, rgba(210,0,35,.55), transparent 32%), linear-gradient(135deg,#030303 0%,#120000 45%,#000 100%)",
+          "radial-gradient(circle at 78% 20%, rgba(255,0,45,.45), transparent 30%), linear-gradient(135deg,#020202 0%,#120000 45%,#000 100%)",
         display: "flex",
         alignItems: "center",
         padding: "150px 7% 80px",
@@ -16,6 +19,22 @@ export default function Hero() {
         overflow: "hidden",
       }}
     >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 0.22, scale: 1 }}
+        transition={{ duration: 1.6 }}
+        style={{
+          position: "absolute",
+          right: -160,
+          top: 80,
+          width: 600,
+          height: 600,
+          borderRadius: "50%",
+          background: "#ff002f",
+          filter: "blur(140px)",
+        }}
+      />
+
       <div
         style={{
           maxWidth: 1450,
@@ -29,8 +48,15 @@ export default function Hero() {
           zIndex: 2,
         }}
       >
-        <div>
-          <div
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -47,10 +73,13 @@ export default function Hero() {
             }}
           >
             <ShieldCheck size={18} />
-            24/7 PRIVATE EMERGENCY SERVICE
-          </div>
+            24/7 EMERGENCY MEDICAL SERVICE
+          </motion.div>
 
-          <h1
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
             style={{
               color: "white",
               fontSize: 88,
@@ -65,9 +94,12 @@ export default function Hero() {
             Medical Care
             <br />
             in Sarigerme
-          </h1>
+          </motion.h1>
 
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
             style={{
               color: "#d4d4d4",
               fontSize: 22,
@@ -77,11 +109,13 @@ export default function Hero() {
             }}
           >
             24/7 ambulance service, hotel visits, IV therapy and emergency
-            medical assistance for patient in Sarigerme, Dalaman and nearby
-            areas.
-          </p>
+            medical assistance for patients in Sarigerme, Dalaman and nearby areas.
+          </motion.p>
 
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45 }}
             style={{
               display: "flex",
               gap: 18,
@@ -89,7 +123,9 @@ export default function Hero() {
               flexWrap: "wrap",
             }}
           >
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.97 }}
               href={siteInfo.phoneHref}
               style={{
                 display: "inline-flex",
@@ -107,9 +143,11 @@ export default function Hero() {
             >
               <Phone size={21} />
               Call Emergency
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.97 }}
               href={siteInfo.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
@@ -129,10 +167,13 @@ export default function Hero() {
             >
               <MessageCircle size={21} />
               WhatsApp
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
 
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55 }}
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, minmax(130px, 1fr))",
@@ -146,8 +187,9 @@ export default function Hero() {
               { icon: <MapPin size={24} />, value: "15 min", label: "Avg. arrival" },
               { icon: <ShieldCheck size={24} />, value: "5000+", label: "Patients" },
             ].map((item) => (
-              <div
+              <motion.div
                 key={item.label}
+                whileHover={{ y: -6, scale: 1.02 }}
                 style={{
                   background: "rgba(255,255,255,.055)",
                   border: "1px solid rgba(255,70,70,.18)",
@@ -165,12 +207,15 @@ export default function Hero() {
                 <p style={{ color: "#bdbdbd", margin: "6px 0 0" }}>
                   {item.label}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: 60, scale: 0.96 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.25 }}
           style={{
             position: "relative",
             display: "flex",
@@ -179,34 +224,25 @@ export default function Hero() {
             minHeight: 720,
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              width: 520,
-              height: 520,
-              borderRadius: "50%",
-              background: "#ff002f",
-              opacity: 0.18,
-              filter: "blur(120px)",
-            }}
-          />
-
-          <Image
-            src="/ambulance.png"
-            alt="Emergency ambulance service in Sarigerme"
-            width={1300}
-            height={900}
-            priority
-            style={{
-              position: "relative",
-              zIndex: 2,
-              width: "118%",
-              height: "auto",
-              objectFit: "contain",
-              filter: "drop-shadow(0 40px 85px rgba(255,0,0,.42))",
-            }}
-          />
-        </div>
+          <motion.div
+            animate={{ y: [0, -14, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Image
+              src="/ambulance.png"
+              alt="Emergency ambulance service in Sarigerme"
+              width={1300}
+              height={900}
+              priority
+              style={{
+                width: "118%",
+                height: "auto",
+                objectFit: "contain",
+                filter: "drop-shadow(0 40px 85px rgba(255,0,0,.42))",
+              }}
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
