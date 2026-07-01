@@ -6,7 +6,7 @@ export const siteInfo = {
   phoneHref: "tel:+905519354800",
 
   whatsappDisplay: "+90 551 935 48 00",
-  whatsappHref: "https://wa.me/905555555555",
+  whatsappHref: "https://wa.me/905519354800",
 
   email: "info@sarigermedoctor.com",
 
