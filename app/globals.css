@@ -583,4 +583,28 @@ button {
     gap: 10px;
     margin-top: 8px;
   }
+}@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99999 !important;
+  }
+
+  .mobile-menu {
+    position: fixed !important;
+    top: 76px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-height: calc(100vh - 76px) !important;
+    overflow-y: auto !important;
+    z-index: 99998 !important;
+  }
 }
