@@ -5,11 +5,11 @@ export const siteInfo = {
 
   domain: "https://doctorsarigerme.com",
 
-  phoneDisplay: "+90 551 935 48 00",
-  phoneHref: "tel:+905519354800",
+  phoneDisplay: "0551 935 44 80",
+  phoneHref: "tel:+905519354480",
 
-  whatsappDisplay: "+90 551 935 48 00",
-  whatsappHref: "https://wa.me/905519354800",
+  whatsappDisplay: "0551 935 44 80",
+  whatsappHref: "https://wa.me/905519354480",
 
   email: "info@doctorsarigerme.com",
 
@@ -25,7 +25,8 @@ export const siteInfo = {
 
   longitude: "28.7240",
 
-  mapsUrl: "https://maps.google.com/",
+  mapsUrl:
+    "https://www.google.com/maps?q=Sarigerme,+Ortaca,+Muğla,+Türkiye&output=embed",
 
   openingHours: "Mo-Su 00:00-23:59",
 
