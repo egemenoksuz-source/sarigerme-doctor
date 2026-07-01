@@ -77,7 +77,7 @@ export default function Hero() {
             }}
           >
             24/7 ambulance service, hotel visits, IV therapy and emergency
-            medical assistance for tourists in Sarigerme, Dalaman and nearby
+            medical assistance for patient in Sarigerme, Dalaman and nearby
             areas.
           </p>
 
