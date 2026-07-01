@@ -2,6 +2,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 * {
@@ -14,54 +16,143 @@ body {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
   font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* Android + iPhone + iPad */
 @media (max-width: 900px) {
+  header {
+    position: sticky !important;
+  }
+
   header nav {
     display: none !important;
   }
 
+  header > div {
+    padding: 14px 20px !important;
+  }
+
+  header h2 {
+    font-size: 20px !important;
+  }
+
+  header p {
+    font-size: 10px !important;
+  }
+
   section {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-
-  h1 {
-    font-size: 54px !important;
-  }
-
-  h2 {
-    font-size: 38px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 78px !important;
+    padding-bottom: 78px !important;
   }
 
   section > div {
     grid-template-columns: 1fr !important;
+    gap: 34px !important;
   }
 
-  img {
-    max-height: 420px;
-  }
-}
-
-@media (max-width: 520px) {
   h1 {
-    font-size: 44px !important;
+    font-size: 46px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1px !important;
+  }
+
+  h2 {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+  }
+
+  h3 {
+    font-size: 24px !important;
   }
 
   p {
     font-size: 16px !important;
+    line-height: 1.7 !important;
   }
 
-  button,
-  a {
-    max-width: 100%;
+  a,
+  button {
+    font-size: 16px !important;
+  }
+
+  iframe {
+    height: 320px !important;
+  }
+}
+
+/* Küçük telefonlar: iPhone SE, küçük Android */
+@media (max-width: 520px) {
+  section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  h1 {
+    font-size: 38px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  p {
+    font-size: 15px !important;
+  }
+
+  div[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  div[style*="min-height: 720"] {
+    min-height: auto !important;
+  }
+
+  img {
+    max-height: 360px !important;
+    object-fit: contain !important;
+  }
+
+  a[href^="tel"],
+  a[href*="wa.me"] {
+    width: auto !important;
+  }
+}
+
+/* iPhone safe area */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  header {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Floating butonlar mobilde küçülsün */
+@media (max-width: 520px) {
+  body > div[style*="position: fixed"] {
+    right: 16px !important;
+    bottom: 16px !important;
   }
 }
