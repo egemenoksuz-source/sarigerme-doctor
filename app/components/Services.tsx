@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   Ambulance,
   HeartPulse,
@@ -11,55 +14,61 @@ const services = [
   {
     icon: <Ambulance size={44} />,
     title: "Emergency Doctor",
-    text: "24/7 emergency medical assistance with rapid response across Sarigerme and surrounding areas.",
+    text: "24/7 emergency medical assistance with rapid response across Sarigerme and nearby areas.",
   },
   {
     icon: <House size={44} />,
     title: "Hotel & Home Visit",
-    text: "Professional doctor visits directly to your hotel, villa or private residence.",
+    text: "Private medical visits directly to your hotel, villa or holiday home.",
   },
   {
     icon: <Syringe size={44} />,
     title: "IV Therapy",
-    text: "Hydration therapy, vitamin infusions and recovery treatments performed safely.",
+    text: "Hydration therapy, vitamin support and recovery treatments when medically suitable.",
   },
   {
     icon: <HeartPulse size={44} />,
-    title: "Cardiology",
-    text: "ECG, blood pressure monitoring and comprehensive cardiovascular examinations.",
+    title: "Emergency Care",
+    text: "Fast assessment and medical assistance for urgent health needs.",
   },
   {
     icon: <Stethoscope size={44} />,
-    title: "Family Medicine",
-    text: "General healthcare services for adults, children and elderly patients.",
+    title: "Medical Consultation",
+    text: "Professional consultation for patients, tourists and residents.",
   },
   {
     icon: <TestTube size={44} />,
     title: "Laboratory Tests",
-    text: "Fast blood analysis and diagnostic laboratory services with reliable results.",
+    text: "Blood tests and diagnostic support with reliable follow-up.",
   },
 ];
 
 export default function Services() {
   return (
     <section
+      id="services"
       style={{
         background:
-          "linear-gradient(180deg,#050505 0%,#0b0b0b 100%)",
+          "linear-gradient(180deg,#050505 0%,#0a0a0a 55%,#050505 100%)",
         padding: "120px 8%",
+        overflow: "hidden",
       }}
     >
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
         style={{
           textAlign: "center",
-          maxWidth: 760,
+          maxWidth: 780,
           margin: "0 auto 80px",
         }}
       >
         <p
           style={{
             color: "#ff5050",
-            fontWeight: 700,
+            fontWeight: 800,
             letterSpacing: 4,
             marginBottom: 18,
           }}
@@ -71,13 +80,14 @@ export default function Services() {
           style={{
             color: "white",
             fontSize: 56,
-            fontWeight: 900,
+            fontWeight: 950,
             marginBottom: 25,
+            letterSpacing: -2,
           }}
         >
-          Healthcare Without
+          Fast, Private and
           <br />
-          Compromise
+          Reliable Medical Care
         </h2>
 
         <p
@@ -87,10 +97,10 @@ export default function Services() {
             lineHeight: 1.9,
           }}
         >
-          From emergency doctor visits to ambulance transportation,
-          we deliver professional healthcare wherever you are.
+          From ambulance support to hotel visits and IV therapy, we provide
+          professional medical assistance when patients need it most.
         </p>
-      </div>
+      </motion.div>
 
       <div
         style={{
@@ -102,18 +112,22 @@ export default function Services() {
         }}
       >
         {services.map((service, index) => (
-          <div
-            key={index}
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -10, scale: 1.015 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: index * 0.06 }}
             style={{
               position: "relative",
               overflow: "hidden",
-              background: "rgba(255,255,255,.04)",
-              backdropFilter: "blur(16px)",
-              borderRadius: 28,
-              padding: 40,
-              border: "1px solid rgba(255,70,70,.15)",
-              boxShadow: "0 20px 50px rgba(255,0,0,.08)",
-              transition: ".3s",
+              background: "rgba(255,255,255,.045)",
+              backdropFilter: "blur(18px)",
+              borderRadius: 30,
+              padding: 42,
+              border: "1px solid rgba(255,70,70,.16)",
+              boxShadow: "0 24px 60px rgba(255,0,0,.08)",
             }}
           >
             <div
@@ -121,28 +135,27 @@ export default function Services() {
                 position: "absolute",
                 top: -70,
                 right: -70,
-                width: 170,
-                height: 170,
+                width: 180,
+                height: 180,
                 borderRadius: "50%",
                 background: "#ff1a1a",
-                opacity: .08,
-                filter: "blur(60px)",
+                opacity: 0.08,
+                filter: "blur(65px)",
               }}
             />
 
             <div
               style={{
-                width: 82,
-                height: 82,
-                borderRadius: 22,
-                background:
-                  "linear-gradient(135deg,#ff3d3d,#980000)",
+                width: 86,
+                height: 86,
+                borderRadius: 24,
+                background: "linear-gradient(135deg,#ff3d3d,#8f0000)",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 color: "white",
-                marginBottom: 30,
-                boxShadow: "0 15px 35px rgba(255,0,0,.35)",
+                marginBottom: 32,
+                boxShadow: "0 18px 40px rgba(255,0,0,.35)",
               }}
             >
               {service.icon}
@@ -151,8 +164,9 @@ export default function Services() {
             <h3
               style={{
                 color: "white",
-                fontSize: 28,
+                fontSize: 29,
                 marginBottom: 18,
+                letterSpacing: -0.5,
               }}
             >
               {service.title}
@@ -160,14 +174,14 @@ export default function Services() {
 
             <p
               style={{
-                color: "#c6c6c6",
+                color: "#c7c7c7",
                 lineHeight: 1.9,
                 fontSize: 17,
               }}
             >
               {service.text}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
