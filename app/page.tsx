@@ -8,6 +8,7 @@ import Coverage from "./components/Coverage";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
+import Schema from "./components/Schema";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Contact />
       <Footer />
       <FloatingButtons />
+      <Schema />
     </>
   );
 }
