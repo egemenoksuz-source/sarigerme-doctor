@@ -1,15 +1,13 @@
-import {
-  Users,
-  Clock3,
-  ShieldCheck,
-  HeartPulse,
-} from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { Users, Clock3, ShieldCheck, HeartPulse } from "lucide-react";
 
 const stats = [
   {
     icon: <Users size={40} />,
     number: "5000+",
-    title: "Happy Patients",
+    title: "Patients Assisted",
   },
   {
     icon: <Clock3 size={40} />,
@@ -46,18 +44,23 @@ export default function Stats() {
         }}
       >
         {stats.map((item, index) => (
-          <div
-            key={index}
+          <motion.div
+            key={item.title}
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -8, scale: 1.02 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: index * 0.08 }}
             style={{
               position: "relative",
               overflow: "hidden",
-              background: "rgba(255,255,255,.04)",
+              background: "rgba(255,255,255,.045)",
               backdropFilter: "blur(18px)",
-              border: "1px solid rgba(255,70,70,.15)",
-              borderRadius: 28,
-              padding: "40px 30px",
+              border: "1px solid rgba(255,70,70,.16)",
+              borderRadius: 30,
+              padding: "42px 30px",
               textAlign: "center",
-              boxShadow: "0 20px 45px rgba(255,0,0,.08)",
+              boxShadow: "0 24px 55px rgba(255,0,0,.08)",
             }}
           >
             <div
@@ -65,28 +68,27 @@ export default function Stats() {
                 position: "absolute",
                 top: -60,
                 right: -60,
-                width: 150,
-                height: 150,
+                width: 160,
+                height: 160,
                 borderRadius: "50%",
                 background: "#ff1f1f",
-                opacity: .08,
+                opacity: 0.08,
                 filter: "blur(60px)",
               }}
             />
 
             <div
               style={{
-                width: 80,
-                height: 80,
-                margin: "0 auto 25px",
-                borderRadius: 22,
-                background:
-                  "linear-gradient(135deg,#ff3b3b,#980000)",
+                width: 82,
+                height: 82,
+                margin: "0 auto 26px",
+                borderRadius: 24,
+                background: "linear-gradient(135deg,#ff3b3b,#8f0000)",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 color: "white",
-                boxShadow: "0 15px 35px rgba(255,0,0,.35)",
+                boxShadow: "0 18px 40px rgba(255,0,0,.35)",
               }}
             >
               {item.icon}
@@ -95,9 +97,10 @@ export default function Stats() {
             <h2
               style={{
                 color: "#ff4d4d",
-                fontSize: 54,
+                fontSize: 56,
                 margin: 0,
-                fontWeight: 900,
+                fontWeight: 950,
+                letterSpacing: -1.5,
               }}
             >
               {item.number}
@@ -112,7 +115,7 @@ export default function Stats() {
             >
               {item.title}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
