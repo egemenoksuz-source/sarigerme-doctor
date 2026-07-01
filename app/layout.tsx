@@ -2,24 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sarigermedoctor.com"),
+  metadataBase: new URL("https://doctorsarigerme.com"),
 
   title: {
-    default: "Sarigerme Doctor | 24/7 English Speaking Doctor & Ambulance",
-    template: "%s | Sarigerme Doctor",
+    default: "Doctor Sarigerme | 24/7 English Speaking Doctor",
+    template: "%s | Doctor Sarigerme",
   },
 
   description:
-    "24/7 English speaking doctor, emergency medical care, hotel doctor, home visits, IV therapy and ambulance service in Sarigerme, Dalaman, Fethiye and surrounding areas.",
+    "24/7 English speaking doctor in Sarigerme. Hotel doctor, emergency medical care, IV therapy, prescriptions and ambulance service in Sarigerme, Dalaman and Fethiye.",
 
   keywords: [
     "Doctor near me",
     "English speaking doctor",
-    "Doctor Fethiye",
-    "Doctor Dalaman",
     "Doctor Sarigerme",
+    "Doctor Dalaman",
+    "Doctor Fethiye",
     "Hotel doctor",
-    "Doctor to hotel",
     "Emergency doctor",
     "Medical clinic",
     "Walk in clinic",
@@ -28,37 +27,49 @@ export const metadata: Metadata = {
     "IV drip near me",
     "Food poisoning doctor",
     "Ear infection doctor",
-    "Pharmacy near me",
     "Doctor near Dalaman Airport",
     "Tourist doctor",
     "Private doctor",
     "24/7 doctor",
-    "Doctor Gocek",
-    "Doctor Dalyan",
-    "Doctor Marmaris",
-    "Doctor Ortaca",
-    "Doctor Turkey",
-    "English doctor Turkey",
-    "Emergency medical clinic",
-    "Private medical clinic",
-    "Doctor hotel visit",
-    "Ambulance service",
   ],
 
-  authors: [
-    {
-      name: "Sarigerme Doctor",
-    },
-  ],
+  verification: {
+    google: "lHJfqjqHhRL6Kh_Gy7eDcLCRiErMUWSPZfl4E2n0dAE",
+  },
 
-  creator: "Sarigerme Doctor",
+  alternates: {
+    canonical: "https://doctorsarigerme.com",
+  },
 
-  publisher: "Sarigerme Doctor",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://doctorsarigerme.com",
+    title: "Doctor Sarigerme | 24/7 Emergency Medical Care",
+    description:
+      "English speaking doctor, hotel doctor, emergency medical care, ambulance service and IV therapy in Sarigerme.",
+    siteName: "Doctor Sarigerme",
+    images: [
+      {
+        url: "/ambulance.png",
+        width: 1200,
+        height: 630,
+        alt: "Doctor Sarigerme Emergency Medical Service",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Doctor Sarigerme",
+    description:
+      "24/7 English speaking doctor, hotel visits, ambulance and emergency medical services.",
+    images: ["/ambulance.png"],
+  },
 
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -66,36 +77,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
       "max-snippet": -1,
     },
-  },
-
-  alternates: {
-    canonical: "https://sarigermedoctor.com",
-  },
-
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://sarigermedoctor.com",
-    title: "Sarigerme Doctor | 24/7 Emergency Medical Care",
-    description:
-      "English speaking doctor, emergency medical care, ambulance service, hotel doctor and home visits in Sarigerme, Dalaman and surrounding areas.",
-    siteName: "Sarigerme Doctor",
-    images: [
-      {
-        url: "/ambulance.png",
-        width: 1200,
-        height: 630,
-        alt: "Sarigerme Doctor",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Sarigerme Doctor",
-    description:
-      "24/7 English speaking doctor, ambulance and emergency medical services.",
-    images: ["/ambulance.png"],
   },
 
   icons: {
